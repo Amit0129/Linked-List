@@ -9,7 +9,8 @@
             Console.WriteLine("Enter 1 for Add First Like 56->30->70");
             Console.WriteLine("Enter 2 for Append Element Like 56->30->70");
             Console.WriteLine("Enter 3 for Insert an Element ");
-            Console.WriteLine("Enter 4 for Delete last Element ");
+            Console.WriteLine("Enter 4 for Delete first Element ");
+            Console.WriteLine("Enter 5 for Delete last Element ");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -38,6 +39,15 @@
                     linkedList.Display();
                     Console.WriteLine("==========");
                     linkedList.RemoveFirst();
+                    linkedList.Display();
+                    break;
+                case 5:
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(70);
+                    linkedList.Display();
+                    Console.WriteLine("==========");
+                    linkedList.RemoveLast();
                     linkedList.Display();
                     break;
                 default:

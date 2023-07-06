@@ -83,6 +83,26 @@ namespace LinkedList
                 head = head.next;
             }
         }
+        public void RemoveLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Empty Linked List");
+            }
+            if (head.next == null)
+            {
+                head = null;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
+        }
         public void Display()
         {
             if (head == null)
