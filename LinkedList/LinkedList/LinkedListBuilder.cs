@@ -11,16 +11,16 @@ namespace LinkedList
         public Node<T> head;
         public void AddFirst(T data)
         {
-            Node<T> node= new Node<T>(data);
+            Node<T> node = new Node<T>(data);
             if (head == null)
             {
-                head= node;
+                head = node;
             }
             else
             {
                 node.next = head;
             }
-            head= node;
+            head = node;
         }
         public void Append(T data)
         {
@@ -39,9 +39,9 @@ namespace LinkedList
                 temp.next = node;
             }
         }
-        public void Insert(int position,T data)
+        public void Insert(int position, T data)
         {
-            Node<T> newNode= new Node<T>(data);
+            Node<T> newNode = new Node<T>(data);
             if (position <= 0)
             {
                 Console.WriteLine("Position always greater than ZERO");
@@ -71,7 +71,17 @@ namespace LinkedList
                     Console.WriteLine("The Given Position is greater than Linked List Length");
                 }
             }
-
+        }
+        public void RemoveFirst()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Empty Linked List");
+            }
+            else
+            {
+                head = head.next;
+            }
         }
         public void Display()
         {
