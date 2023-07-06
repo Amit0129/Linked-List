@@ -9,7 +9,7 @@
             Console.WriteLine("Enter 1 for Add First Like 56->30->70");
             Console.WriteLine("Enter 2 for Append Element Like 56->30->70");
             Console.WriteLine("Enter 3 for Insert an Element ");
-            Console.WriteLine("Enter 4 for Delete last Element ");
+            Console.WriteLine("Enter 4 for Delete first Element ");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
