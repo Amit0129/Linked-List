@@ -72,7 +72,7 @@ namespace LinkedList
                 }
             }
         }
-        public void RemoveFirst()
+        public void Remove_First()
         {
             if (head == null)
             {
@@ -81,26 +81,6 @@ namespace LinkedList
             else
             {
                 head = head.next;
-            }
-        }
-        public void RemoveLast()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("Empty Linked List");
-            }
-            if (head.next == null)
-            {
-                head = null;
-            }
-            else
-            {
-                Node<T> temp = head;
-                while (temp.next.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = null;
             }
         }
         public void Display()
