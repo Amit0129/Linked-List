@@ -4,13 +4,20 @@
     {
         static void Main(string[] args)
         {
-            LinkedList<int> linkedList = new LinkedList<int>();
-            linkedList.AddLast(56);
-            linkedList.AddLast(30);
-            linkedList.AddLast(70);
-            foreach (var item in linkedList)
+            LinkedListBuilder<int> linkedList = new LinkedListBuilder<int>();
+            Console.WriteLine("Enter 1 for Enter Element Like 56->30->70");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
             {
-                Console.WriteLine(item);
+                case 1:
+                    linkedList.AddFirst(70);
+                    linkedList.AddFirst(30);
+                    linkedList.AddFirst(56);
+                    linkedList.Display();
+                    break;
+                default:
+                    Console.WriteLine("Enter a valid choice");
+                    break;
             }
         }
     }
