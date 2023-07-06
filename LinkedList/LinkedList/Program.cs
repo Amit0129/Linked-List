@@ -5,8 +5,10 @@
         static void Main(string[] args)
         {
             LinkedListBuilder<int> linkedList = new LinkedListBuilder<int>();
+            LinkedListBuilder<string> linkedListDtring = new LinkedListBuilder<string>();
             Console.WriteLine("Enter 1 for Add First Like 56->30->70");
             Console.WriteLine("Enter 2 for Append Element Like 56->30->70");
+            Console.WriteLine("Enter 3 for Insert an Element ");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -22,10 +24,17 @@
                     linkedList.Append(70);
                     linkedList.Display();
                     break;
+                case 3:
+                    linkedList.Append(56);
+                    linkedList.Append(70);
+                    linkedList.Insert(2, 30);
+                    linkedList.Display();
+                    break;
                 default:
                     Console.WriteLine("Enter a valid choice");
                     break;
             }
         }
+
     }
 }

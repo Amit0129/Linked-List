@@ -39,6 +39,40 @@ namespace LinkedList
                 temp.next = node;
             }
         }
+        public void Insert(int position,T data)
+        {
+            Node<T> newNode= new Node<T>(data);
+            if (position <= 0)
+            {
+                Console.WriteLine("Position always greater than ZERO");
+            }
+            if (position == 1)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                Node<T> temp = head;
+                for (int i = 2; i < position; i++)
+                {
+                    if (temp != null)
+                    {
+                        temp = temp.next;
+                    }
+                }
+                if (temp != null)
+                {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+                else
+                {
+                    Console.WriteLine("The Given Position is greater than Linked List Length");
+                }
+            }
+
+        }
         public void Display()
         {
             if (head == null)
