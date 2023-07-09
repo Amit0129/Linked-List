@@ -14,6 +14,7 @@
             Console.WriteLine("Enter 6 for Search Element ");
             Console.WriteLine("Enter 7 for Insert Element After a Element");
             Console.WriteLine("Enter 8 for Remove an Element and show linked list size");
+            Console.WriteLine("Enter 9 for Sorted Insert");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -84,6 +85,13 @@
                     linkedList.Display();
                     linkedList.Remove(40);
                     linkedList.Size();
+                    break;
+                case 9:
+                    linkedList.SortedInsert(56);
+                    linkedList.SortedInsert(30);
+                    linkedList.SortedInsert(40);
+                    linkedList.SortedInsert(70);
+                    linkedList.Display();
                     break;
                 default:
                     Console.WriteLine("Enter a valid choice");

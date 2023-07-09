@@ -132,7 +132,7 @@ namespace LinkedList
             }
 
         }
-        public void InsertDataAfterAData(T eData,T newdata)
+        public void InsertDataAfterAData(T eData, T newdata)
         {
             if (head == null)
             {
@@ -144,14 +144,14 @@ namespace LinkedList
             while (temp != null)
             {
                 count++;
-                if (temp.data.CompareTo(eData)==0)
+                if (temp.data.CompareTo(eData) == 0)
                 {
                     found++;
                     break;
                 }
                 temp = temp.next;
             }
-            Insert(count+1, newdata);
+            Insert(count + 1, newdata);
         }
         public void Remove(T value)
         {
@@ -186,7 +186,7 @@ namespace LinkedList
                 count++;
                 temp = temp.next;
             }
-            Console.WriteLine("Size of Linked List is {0}",count);
+            Console.WriteLine("Size of Linked List is {0}", count);
         }
         public void Display()
         {
@@ -220,6 +220,25 @@ namespace LinkedList
                 temp = temp.next;
             }
             return i;
+        }
+        public void SortedInsert(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+            if (head == null || (head.data.CompareTo(newNode.data) >= 0))
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (temp.next != null && (temp.next.data.CompareTo(newNode.data) < 0))
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
         }
     }
 }
