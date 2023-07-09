@@ -98,7 +98,7 @@ namespace LinkedList
                     found++;
                     break;
                 }
-                temp= temp.next;
+                temp = temp.next;
             }
             if (found == 1)
             {
@@ -106,9 +106,26 @@ namespace LinkedList
             }
             else
             {
-                Console.WriteLine("The value {0} not present in linked list.",value);
+                Console.WriteLine("The value {0} not present in linked list.", value);
             }
-            
+
+        }
+        public void InsertDataAfterAData(T eData,T newdata)
+        {
+            Node<T> temp = head;
+            int found = 0;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                if (temp.data.CompareTo(eData)==0)
+                {
+                    found++;
+                    break;
+                }
+                temp = temp.next;
+            }
+            Insert(count+1, newdata);
         }
         public void Display()
         {

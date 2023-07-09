@@ -11,6 +11,7 @@
             Console.WriteLine("Enter 3 for Insert an Element ");
             Console.WriteLine("Enter 4 for Delete first Element ");
             Console.WriteLine("Enter 5 for Search Element ");
+            Console.WriteLine("Enter 6 for Insert Element After a Element");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -49,6 +50,19 @@
                     Console.WriteLine("Enter the value you want to find");
                     int val = Convert.ToInt32(Console.ReadLine());
                     linkedList.SearchValue(val);
+                    break;
+                case 6:
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(70);
+                    Console.WriteLine("Element in Linked List are");
+                    linkedList.Display();
+                    Console.WriteLine("Enter the data you want to add");
+                    int newdata = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter an exiting data you want to add after");
+                    int exdata = Convert.ToInt32(Console.ReadLine());
+                    linkedList.InsertDataAfterAData(exdata, newdata);
+                    linkedList.Display();
                     break;
                 default:
                     Console.WriteLine("Enter a valid choice");
