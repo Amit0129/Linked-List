@@ -13,6 +13,7 @@
             Console.WriteLine("Enter 5 for Delete last Element ");
             Console.WriteLine("Enter 6 for Search Element ");
             Console.WriteLine("Enter 7 for Insert Element After a Element");
+            Console.WriteLine("Enter 8 for Remove an Element and show linked list size");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -73,6 +74,16 @@
                     int exdata = Convert.ToInt32(Console.ReadLine());
                     linkedList.InsertDataAfterAData(exdata, newdata);
                     linkedList.Display();
+                    break;
+                case 8:
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(40);
+                    linkedList.Append(70);
+                    Console.WriteLine("Element in Linked List are");
+                    linkedList.Display();
+                    linkedList.Remove(40);
+                    linkedList.Size();
                     break;
                 default:
                     Console.WriteLine("Enter a valid choice");

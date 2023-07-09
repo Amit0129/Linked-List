@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LinkedList
 {
@@ -133,6 +134,10 @@ namespace LinkedList
         }
         public void InsertDataAfterAData(T eData,T newdata)
         {
+            if (head == null)
+            {
+                Console.WriteLine("Empty Linked List");
+            }
             Node<T> temp = head;
             int found = 0;
             int count = 0;
@@ -147,6 +152,41 @@ namespace LinkedList
                 temp = temp.next;
             }
             Insert(count+1, newdata);
+        }
+        public void Remove(T value)
+        {
+            int position = SearchAValue(value);
+            if (position == 1)
+            {
+                this.head = this.head.next;
+            }
+            else
+            {
+                Node<T> temp = this.head;
+                for (int i = 1; i < position - 1; i++)
+                {
+                    if (temp != null)
+                    {
+                        temp = temp.next;
+                    }
+                }
+                if (temp != null)
+                {
+                    temp.next = temp.next.next;
+                }
+            }
+            Console.WriteLine("Element Removed");
+        }
+        public void Size()
+        {
+            int count = 0;
+            Node<T> temp = this.head;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            Console.WriteLine("Size of Linked List is {0}",count);
         }
         public void Display()
         {
@@ -163,6 +203,23 @@ namespace LinkedList
                     temp = temp.next;
                 }
             }
+        }
+        public int SearchAValue(T value)
+        {
+            Node<T> temp = this.head;
+            int position = 0;
+            int i = 0;
+            while (temp != null)
+            {
+                i++;
+                if (temp.data.CompareTo(value) == 0)
+                {
+                    position++;
+                    break;
+                }
+                temp = temp.next;
+            }
+            return i;
         }
     }
 }
