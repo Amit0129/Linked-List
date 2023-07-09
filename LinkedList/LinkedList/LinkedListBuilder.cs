@@ -85,6 +85,27 @@ namespace LinkedList
                 head = head.next;
             }
         }
+        public void Remove_Last()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Empty Linked List");
+            }
+            Node<T> temp = head;
+            if (temp.next == null)
+            {
+                head = null;
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
+            Console.WriteLine("Last Element remove sucessfully");
+        }
         public void SearchValue(T value)
         {
             Node<T> temp = this.head;

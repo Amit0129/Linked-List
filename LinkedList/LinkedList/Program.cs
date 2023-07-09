@@ -10,8 +10,9 @@
             Console.WriteLine("Enter 2 for Append Element Like 56->30->70");
             Console.WriteLine("Enter 3 for Insert an Element ");
             Console.WriteLine("Enter 4 for Delete first Element ");
-            Console.WriteLine("Enter 5 for Search Element ");
-            Console.WriteLine("Enter 6 for Insert Element After a Element");
+            Console.WriteLine("Enter 5 for Delete last Element ");
+            Console.WriteLine("Enter 6 for Search Element ");
+            Console.WriteLine("Enter 7 for Insert Element After a Element");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -47,11 +48,20 @@
                     linkedList.Append(56);
                     linkedList.Append(30);
                     linkedList.Append(70);
+                    Console.WriteLine("Element in Linked List");
+                    linkedList.Display();
+                    linkedList.Remove_Last();
+                    linkedList.Display();
+                    break;
+                case 6:
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(70);
                     Console.WriteLine("Enter the value you want to find");
                     int val = Convert.ToInt32(Console.ReadLine());
                     linkedList.SearchValue(val);
                     break;
-                case 6:
+                case 7:
                     linkedList.Append(56);
                     linkedList.Append(30);
                     linkedList.Append(70);
