@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class LinkedListBuilder<T>
+    public class LinkedListBuilder<T> where T : IComparable
     {
         public Node<T> head;
         public void AddFirst(T data)
@@ -82,6 +84,31 @@ namespace LinkedList
             {
                 head = head.next;
             }
+        }
+        public void SearchValue(T value)
+        {
+            Node<T> temp = this.head;
+            int found = 0;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                if (temp.data.CompareTo(value) == 0)
+                {
+                    found++;
+                    break;
+                }
+                temp= temp.next;
+            }
+            if (found == 1)
+            {
+                Console.WriteLine($"The position of value {value} is {count}");
+            }
+            else
+            {
+                Console.WriteLine("The value {0} not present in linked list.",value);
+            }
+            
         }
         public void Display()
         {

@@ -10,6 +10,7 @@
             Console.WriteLine("Enter 2 for Append Element Like 56->30->70");
             Console.WriteLine("Enter 3 for Insert an Element ");
             Console.WriteLine("Enter 4 for Delete first Element ");
+            Console.WriteLine("Enter 5 for Search Element ");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -40,6 +41,14 @@
                     linkedList.Remove_First();
                     Console.WriteLine("First Element Removed");
                     linkedList.Display();
+                    break;
+                case 5:
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(70);
+                    Console.WriteLine("Enter the value you want to find");
+                    int val = Convert.ToInt32(Console.ReadLine());
+                    linkedList.SearchValue(val);
                     break;
                 default:
                     Console.WriteLine("Enter a valid choice");
